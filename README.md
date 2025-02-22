@@ -1,3 +1,4 @@
+![Screenshot 2025-02-23 003006](https://github.com/user-attachments/assets/69cfb343-e5e4-4320-a572-85bbc4a3e380)
 XFI Runner Game
 
 About
@@ -5,6 +6,7 @@ About
 "Run, Jump, Survive, and Conquer!" XFI Runner is a thrilling endless runner game built with React, where players dive into a fast-paced, action-packed world filled with dynamic obstacles, collectible coins, and powerful boosts. The game challenges players' reflexes, timing, and strategy as they guide Kaia, our adventurous protagonist, through ever-changing terrains.
 
 🔗 Play the live version here: xfirunner.netlify.app
+![Screenshot 2025-02-23 002553](https://github.com/user-attachments/assets/80a7b490-9fd7-4be3-a4bb-10d385ba19b2)
 
 🚀 Features
 
@@ -19,6 +21,7 @@ High Score Tracking: Compete with yourself and try to beat your highest score.
 Power-ups & Boosts: Collect special items to gain temporary invincibility or score multipliers.
 
 Responsive Design: Smooth experience on both desktop and mobile.
+![Screenshot 2025-02-23 002519](https://github.com/user-attachments/assets/728d9584-4537-4ad9-8fe1-2d23ad287c8a)
 
 🛠️ Tech Stack
 
