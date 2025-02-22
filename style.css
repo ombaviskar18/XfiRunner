@@ -1,0 +1,1029 @@
+@font-face {
+  font-family: "pixelFlag";
+  src: url("assets/fonts/000webfont1.ttf");
+}
+
+@font-face {
+  font-family: "Botsmatic3d";
+  src: url("assets/fonts/Botsmatic3d.ttf");
+}
+@font-face {
+  font-family: "BotsmaticOutline";
+  src: url("assets/fonts/BotsmaticOutline.ttf");
+}
+@font-face {
+  font-family: "BotsmaticDemo";
+  src: url("assets/fonts/BotsmaticDemo.ttf");
+}
+::-webkit-scrollbar {
+  width: 0;
+}
+
+body,
+html {
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  font-family: "pixelFlag";
+  color: #fff;
+  overflow: hidden;
+  margin: 0;
+}
+
+.circles {
+  position: absolute;
+  overflow: hidden;
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.circles li {
+  position: absolute;
+  display: block;
+  list-style: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  animation: animate 5s linear infinite;
+  bottom: -150px;
+}
+
+.circles li:nth-child(1) {
+  left: 25%;
+  width: 80px;
+  height: 80px;
+  animation-delay: 0s;
+  animation-duration: 7s;
+}
+
+.circles li:nth-child(2) {
+  left: 10%;
+  width: 50px;
+  height: 50px;
+  animation-delay: 2s;
+  animation-duration: 18s;
+}
+
+.circles li:nth-child(3) {
+  left: 70%;
+  width: 30px;
+  height: 30px;
+  animation-delay: 9s;
+  animation-duration: 8s;
+}
+
+.circles li:nth-child(4) {
+  left: 40%;
+  width: 60px;
+  height: 60px;
+  animation-delay: 0s;
+  animation-duration: 17s;
+}
+
+.circles li:nth-child(5) {
+  left: 65%;
+  width: 20px;
+  height: 20px;
+  animation-delay: 0s;
+}
+
+.circles li:nth-child(6) {
+  left: 75%;
+  width: 80px;
+  height: 80px;
+  animation-delay: 3s;
+  animation-duration: 6s;
+}
+
+.circles li:nth-child(7) {
+  left: 35%;
+  width: 50px;
+  height: 50px;
+  animation-delay: 5s;
+  animation-duration: 20s;
+}
+
+.circles li:nth-child(8) {
+  left: 50%;
+  width: 25px;
+  height: 25px;
+  animation-delay: 15s;
+  animation-duration: 15s;
+}
+
+.circles li:nth-child(9) {
+  left: 20%;
+  width: 40px;
+  height: 40px;
+  animation-delay: 2s;
+  animation-duration: 10s;
+}
+
+.circles li:nth-child(10) {
+  left: 85%;
+  width: 100px;
+  height: 100px;
+  animation-delay: 0s;
+  animation-duration: 5s;
+}
+
+@keyframes animate {
+  0% {
+    transform: translateY(-50vh);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(-120vh);
+    opacity: 1;
+  }
+}
+main {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.screenRatio {
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+}
+.insideScreenRatio {
+  padding: 20px;
+  margin: 0;
+  width: 70%;
+  height: 60%;
+}
+
+.wrapper {
+  position: relative;
+  overflow: hidden;
+}
+
+.canvas {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  background: #000;
+  z-index: -10;
+}
+.controlBlock {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  font-size: 30px;
+  background-color: rgba(47, 31, 46, 0.55);
+  border-radius: 10px 10px;
+  opacity: 0;
+  top: 30%;
+  left: 50%;
+  padding: 20px;
+  box-sizing: border-box;
+  transform: translate(-50%, -50%);
+  transition: 1s;
+}
+.controlButton {
+  height: 45px;
+  width: 45px;
+  margin: 4px;
+  image-rendering: pixelated;
+}
+.mobileControlButt {
+  height: 13vh;
+  width: auto;
+  image-rendering: pixelated;
+  background-color: rgba(255, 255, 255, 0.237);
+  border-radius: 20%;
+  padding: 10px;
+}
+.leftButtonsBlock {
+  display: none;
+}
+.rightButtonsBlock {
+  display: none;
+}
+
+.pause,
+.gameOver,
+.mainMenu,
+.credits,
+.tutorial,
+.achives,
+.store {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  position: absolute;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  text-align: center;
+  font-size: 35px;
+}
+.mainTitle {
+  font-family: "BotsmaticDemo";
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-size: 70px;
+  height: 40%;
+  z-index: 100;
+  line-height: 1.3;
+}
+.subtitle {
+  font-family: "pixelFlag";
+  font-weight: bold;
+  font-size: 40px;
+  letter-spacing: 3px;
+}
+.pause,
+.gameOver {
+  background: url("assets/gui/popup.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  image-rendering: pixelated;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  background-repeat: no-repeat;
+  border-radius: 20px 20px;
+  line-height: 1.3;
+  animation: soft 0.2s ease-out;
+  font-size: 50px;
+  font-weight: bold;
+}
+@keyframes soft {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    display: block;
+    opacity: 1;
+  }
+}
+.mainMenuButtons {
+  margin-top: 80px;
+  width: 100%;
+  font-size: 20px;
+  display: flex;
+  justify-content: space-evenly;
+  z-index: 100;
+  font-family: "BotsmaticDemo";
+}
+
+.menuButton {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  width: 150px;
+  height: 80px;
+  
+  background-image: url("assets/gui/midBtn.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  image-rendering: pixelated;
+  transition: 0.3s;
+}
+.connectButton {
+  position: relative;
+  bottom: 100px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  width: 150px;
+  height: 100px;
+  padding: 10px 20px;
+  background-image: url("assets/gui/midBtn.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  image-rendering: pixelated;
+  transition: 0.3s;
+}
+.menuButton img {
+  height: 40px;
+  margin-right: 10px;
+}
+.pauseButton {
+  position: absolute;
+  height: 40px;
+  width: 40px;
+  right: 20px;
+  top: 20px;
+}
+.replayButton,
+.homeButton,
+.playOnPauseButton {
+  height: 55px;
+  width: 55px;
+  margin: 20px;
+}
+.rightTopBlock {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 20px;
+  right: 20px;
+}
+.smallBtn {
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  background-image: url("assets/gui/smallBtn.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  image-rendering: pixelated;
+  padding: 10px;
+  margin-right: 10px;
+}
+.smallBtn:hover {
+  filter: brightness(0.7);
+}
+.soundBtn {
+  height: 50px;
+  width: 50px;
+  content: url("assets/gui/soundOn.png");
+}
+.soundBtnOff {
+  content: url("assets/gui/soundOff.png");
+  filter: brightness(0.6) !important;
+}
+.playOnPauseButton {
+  width: 50px;
+}
+.smallBtn {
+  filter: drop-shadow(5px 5px 5px #0000004e);
+  cursor: pointer;
+}
+.button:hover {
+  filter: brightness(0.7);
+}
+.score {
+  position: absolute;
+  left: 20px;
+  top: 5px;
+  color: #fff;
+  font-size: 60px;
+}
+.coins {
+  position: absolute;
+  display: flex;
+  justify-content: baseline;
+  align-items: baseline;
+  left: 20px;
+  top: 45px;
+  color: #ffd502;
+  font-size: 45px;
+}
+.coins img {
+  width: 20px;
+}
+.storeCoins {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  font-size: 45px;
+  top: 20%;
+  left: 5%;
+}
+.storeCoins img {
+  width: 40px;
+  height: 35px;
+}
+
+.gameOverScore {
+  position: unset;
+  font-size: 50px;
+}
+.HIandRecord {
+  font-size: 50px;
+  font-weight: bold;
+}
+
+.mainBg {
+  font-family: "pixelFlag";
+  display: flex;
+  flex-direction: row;
+  filter: brightness(0.9);
+  background-size: cover;
+  background-position: top;
+  background-image: url("stuff/bg.gif");
+}
+.mainLeftInfo {
+  position: absolute;
+  left: 25px;
+  top: 30px;
+  z-index: 100;
+  display: flex;
+}
+.mainLeftWrapper {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.mainStatText {
+  font-weight: 600;
+  font-size: 55px;
+  margin-right: 15px;
+}
+#prizeImg {
+  width: 50px;
+  height: auto;
+  margin-right: 15px;
+}
+
+#coinImg {
+  width: 50px;
+  height: auto;
+  margin-right: 15px;
+}
+
+.credits,
+.achives,
+.store {
+  flex-direction: column;
+  font-size: 50px;
+  text-shadow: unset;
+  overflow-y: auto;
+  padding: 20px;
+  box-sizing: border-box;
+  justify-content: space-between;
+}
+
+.achivesHolder {
+  animation: fromTop 0.6s;
+}
+
+@keyframes fromTop {
+  0% {
+    transform: translateY(-50%);
+    display: none;
+  }
+  100% {
+    display: block;
+  }
+}
+.creditsHolder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  animation: fromTop 0.6s;
+}
+
+.store {
+  padding: 0;
+}
+
+.achivesHolder {
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+
+.storeHolder {
+  height: 100%;
+  position: relative;
+  animation: fellOnTop 0.6s ease-in;
+}
+.storeBack {
+  content: url("assets/gui/store.png");
+  height: 80%;
+  position: relative;
+}
+.store-return-btn {
+  position: absolute;
+  bottom: 20px;
+}
+.addBtn {
+  position: absolute;
+  align-items: center;
+  top: 30%;
+  right: 10%;
+  content: url(assets/gui/addBook.png);
+  height: 40%;
+  cursor: pointer;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.addBtn:hover {
+  filter: brightness(0.8);
+}
+.saveMeHolder {
+  font-weight: normal;
+  font-size: 30px;
+}
+.saveMeAdd {
+  align-items: center;
+  background-image: url(assets/gui/smallBtn.png);
+  height: 40%;
+  cursor: pointer;
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: static;
+}
+.saveMeButtonsHolder {
+  display: flex;
+  align-items: flex-start;
+}
+.gameOverCoinsHolder {
+  display: flex;
+  align-items: baseline;
+  font-size: 50px;
+  justify-content: center;
+  border-bottom: 5px solid white;
+  padding: 0 15px;
+}
+.payForLife {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 25px;
+}
+.payForLifeImg {
+  position: relative;
+  top: 2px;
+  width: 25px;
+  height: 20px;
+  image-rendering: auto;
+}
+.upgrade {
+  display: flex;
+  align-items: end;
+  justify-content: center;
+}
+.upgradeCoinImg {
+  width: 20px;
+  height: 18px;
+  image-rendering: auto;
+  position: relative;
+  top: 2px;
+}
+.upgradeBtnContent {
+  position: absolute;
+  top: 45%;
+  left: 52%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+}
+
+.upgradeHolder img {
+  width: 50px;
+  image-rendering: auto;
+}
+.upgradeHolder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.upgradesWrapper {
+  position: absolute;
+  top: 35%;
+  left: 10%;
+}
+.shieldUpgradeHolder,
+.boosterUpgradeHolder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 30px;
+  image-rendering: pixelated;
+  text-align: left;
+}
+.upgradeHolder {
+  background-image: url("assets/gui/btn.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  padding: 10px;
+}
+.upgradeLevel {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+  border-radius: 50%;
+  background-color: #27110938;
+}
+.activeLevel {
+  background-color: #4b0808ad;
+}
+.upgradeProgress {
+  margin-left: 15px;
+  display: flex;
+}
+.upgradeBtn {
+  margin: 0;
+  margin-left: 10px;
+  font-size: 30px;
+  position: relative;
+  padding: 17px;
+}
+
+@keyframes fellOnTop {
+  0% {
+    transform: translateY(-50%);
+    display: none;
+  }
+  35% {
+    transform: translateY(-8%);
+  }
+  60% {
+    transform: translateY(-12%);
+  }
+  100% {
+    display: block;
+  }
+}
+.achiveBlock {
+  font-family: "pixelFlag";
+  align-items: center;
+  font-size: 25px;
+  display: flex;
+  padding: 10px;
+  color: rgb(255, 255, 255);
+  width: 40%;
+  height: fit-content;
+  background-color: rgb(36, 30, 68);
+  margin-bottom: 20px;
+  border-radius: 10px 10px;
+}
+
+.achiveText {
+  text-align: center;
+}
+.achiveText p {
+  margin: 0;
+  font-size: 30px;
+  text-decoration: underline 3px;
+}
+.achiveImg {
+  height: 50px;
+  margin-right: 20px;
+}
+.lock {
+  opacity: 0.7;
+}
+.statsHolder {
+  display: flex;
+  font-size: 30px;
+  margin-bottom: 20px;
+}
+.btn {
+  width: auto;
+  height: auto;
+  padding: 30px;
+  height: auto;
+  border: 0;
+  outline: none;
+  cursor: pointer;
+  font-family: "pixelFlag";
+  background: none;
+  background-image: url("assets/gui/btn.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: right;
+  image-rendering: pixelated;
+  font-size: 30px;
+  color: rgb(255, 255, 255);
+  transition: 0.3s;
+}
+.btn:hover,
+.menuButton:hover {
+  filter: brightness(0.8);
+  transform: scale(1.03);
+}
+.return-btn-holder {
+  width: 100%;
+  height: fit-content;
+  position: sticky;
+  right: 10px;
+  bottom: 0px;
+}
+.return-btn {
+  font-size: 35px;
+  animation: fromBottom 0.6s ease-in-out;
+}
+
+@keyframes fromBottom {
+  0% {
+    transform: translateY(50%);
+    display: none;
+  }
+  100% {
+    display: block;
+  }
+}
+.stat {
+  margin-right: 20px;
+}
+.credits {
+  font-size: 30px;
+
+  font-family: "BotsmaticDemo";
+}
+.credits a {
+  font-family: "pixelFlag";
+  font-weight: bold;
+  color: rgb(30, 0, 94);
+}
+.credits a:hover {
+  color: rgb(51, 10, 140);
+}
+
+.mainMenuSide {
+  height: 100%;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.credits {
+  text-shadow: unset;
+}
+
+.loader {
+  display: inline-block;
+  position: relative;
+  left: 50%;
+  top: 40%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 80px;
+  z-index: 1000;
+}
+.loader div {
+  box-sizing: border-box;
+  display: block;
+  position: absolute;
+  width: 64px;
+  height: 64px;
+  margin: 8px;
+  border: 8px solid #fff;
+  border-radius: 50%;
+  animation: loader 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+  border-color: #fff transparent transparent transparent;
+}
+.loader div:nth-child(1) {
+  animation-delay: -0.45s;
+}
+.loader div:nth-child(2) {
+  animation-delay: -0.3s;
+}
+.loader div:nth-child(3) {
+  animation-delay: -0.15s;
+}
+@keyframes loader {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.hide {
+  display: none;
+  opacity: 0;
+}
+@media screen and (orientation: portrait) {
+  #turnLandscape {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgb(255, 255, 255);
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(0, 0, 0);
+  }
+  #rotateIcon {
+    height: 100px;
+  }
+
+  main {
+    display: none;
+  }
+}
+
+@media screen and (orientation: landscape) {
+  #turnLandscape {
+    display: none;
+  }
+  main {
+    display: flex;
+  }
+}
+@media (max-width: 920px) {
+  .screenRatio {
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+  }
+  .rightTopBlock {
+    right: 30px;
+    top: 30px;
+  }
+  .mainTitle {
+    font-size: 50px;
+    line-height: 1.4;
+  }
+  .subtitle {
+    font-size: 25px;
+  }
+  .smallBtn {
+    width: 24px;
+    height: 24px;
+  }
+  .soundBtn {
+    height: 40px;
+    width: 40px;
+  }
+  .score {
+    font-size: 50px;
+  }
+  .coins {
+    font-size: 40px;
+    top: 35px;
+  }
+  .btn {
+    padding: 18px;
+  }
+  .return-btn {
+    font-size: 25px;
+  }
+  .connectButton {
+    bottom: 65px;
+  }
+  .menuButton img {
+    height: 30px;
+  }
+  .menuButton {
+    width: 120;
+    height: 50;
+  }
+  .mainMenuButtons {
+    font-size: 15px;
+  }
+  .insideScreenRatio {
+    overflow: scroll;
+    width: 85%;
+    height: 85%;
+  }
+  #coinImg {
+    width: 40px;
+  }
+  #coinImg {
+    width: 40px;
+  }
+  .mainStatText {
+    font-size: 40px;
+  }
+  .pause,
+  .gameOver {
+    font-size: 35px;
+  }
+  .HIandRecord {
+    font-size: 40px;
+    line-height: 0;
+  }
+  .saveBtn {
+    height: 40px;
+    width: 40px;
+  }
+  .gameOverCoins {
+    font-size: 35px;
+  }
+  .pauseButton {
+    height: 30px;
+    width: 30px;
+  }
+  .rightTopBlock {
+    width: 30px;
+    height: 30px;
+  }
+  .buttonHolder {
+    height: 50px;
+  }
+  .achiveImg {
+    height: 43px;
+    margin-right: 10px;
+  }
+  .achiveText p {
+    font-size: 25px;
+  }
+  .statsHolder {
+    font-size: 25px;
+  }
+  .achiveText {
+    font-size: 19px;
+  }
+  .achivesHolder {
+    justify-content: space-evenly;
+  }
+  .achiveBlock {
+    justify-content: center;
+    width: 43%;
+  }
+  .achives {
+    padding: 10px;
+  }
+  .credits {
+    font-size: 30px;
+  }
+  .credits a {
+    font-size: 25px;
+  }
+  .leftButtonsBlock {
+    display: block;
+    position: absolute;
+    left: 40px;
+    bottom: 20px;
+  }
+  .rightButtonsBlock {
+    display: block;
+    position: absolute;
+    right: 40px;
+    bottom: 20px;
+  }
+  .controlBlock {
+    display: none;
+  }
+  .upgradesWrapper {
+    top: 30%;
+    left: 7%;
+  }
+  .upgradeHolder {
+    padding: 12px;
+  }
+  .upgradeHolder img {
+    width: 34px;
+  }
+  .shieldUpgradeHolder,
+  .boosterUpgradeHolder {
+    font-size: 24px;
+  }
+  .upgradeLevel {
+    height: 15px;
+    width: 15px;
+    margin-right: 8px;
+  }
+  .storeCoins {
+    font-size: 35px;
+  }
+  .mainLeftInfo {
+    flex-direction: column;
+    align-items: flex-end;
+  }
+  .mainStatText {
+    margin: 0;
+  }
+  .storeCoins img {
+    width: 30px;
+    height: 25px;
+  }
+  .replayButton,
+  .homeButton,
+  .playOnPauseButton {
+    height: 40px;
+    width: 40px;
+    margin: 10px;
+  }
+  .storeBack {
+    height: 85%;
+  }
+  .store-return-btn {
+    position: absolute;
+    bottom: 0px;
+  }
+  .hide {
+    display: none;
+  }
+}
